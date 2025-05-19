@@ -45,6 +45,31 @@ public class Product {
         this.proLikesCount = 0;
     }
 
+    // Getters and setters
+    public String getProId() { return proId; }
+    public void setProId(String proId) { this.proId = proId; }
+
+    public String getProModel() { return proModel; }
+    public void setProModel(String proModel) { this.proModel = proModel; }
+
+    public String getProCategory() { return proCategory; }
+    public void setProCategory(String proCategory) { this.proCategory = proCategory; }
+
+    public String getProName() { return proName; }
+    public void setProName(String proName) { this.proName = proName; }
+
+    public double getProCurrentPrice() { return proCurrentPrice; }
+    public void setProCurrentPrice(double proCurrentPrice) { this.proCurrentPrice = proCurrentPrice; }
+
+    public double getProRawPrice() { return proRawPrice; }
+    public void setProRawPrice(double proRawPrice) { this.proRawPrice = proRawPrice; }
+
+    public double getProDiscount() { return proDiscount; }
+    public void setProDiscount(double proDiscount) { this.proDiscount = proDiscount; }
+
+    public int getProLikesCount() { return proLikesCount; }
+    public void setProLikesCount(int proLikesCount) { this.proLikesCount = proLikesCount; }
+
     /**
      * Returns the product information as a formatted string.
      * @return String in JSON-like format
