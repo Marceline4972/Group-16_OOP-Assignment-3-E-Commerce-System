@@ -34,6 +34,19 @@ public class Order {
         this.orderTime = "01-01-2025_00:00:00";
     }
 
+    // Getters and setters
+    public String getOrderId() { return orderId; }
+    public void setOrderId(String orderId) { this.orderId = orderId; }
+
+    public String getUserId() { return userId; }
+    public void setUserId(String userId) { this.userId = userId; }
+
+    public String getProId() { return proId; }
+    public void setProId(String proId) { this.proId = proId; }
+
+    public String getOrderTime() { return orderTime; }
+    public void setOrderTime(String orderTime) { this.orderTime = orderTime; }
+
     /**
      * Returns the order information as a formatted string.
      * @return String in JSON-like format
