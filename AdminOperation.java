@@ -1,0 +1,44 @@
+package OperationClass.UserOperation;
+
+import java.io.*;
+import java.nio.file.*;
+import java.util.*;
+import org.json.*;
+
+public class AdminOperation {
+    private static AdminOperation instance;
+    private final String userFilePath = "data/users.txt";
+
+    private AdminOperation() {}
+
+    public static AdminOperation getInstance() {
+        if (instance == null) {
+            instance = new AdminOperation();
+        }
+        return instance;
+    }
+
+    @SuppressWarnings("CallToPrintStackTrace")
+    public void registerAdmin() {
+        try {
+            List<String> lines = Files.readAllLines(Paths.get(userFilePath));
+            for (String line : lines) {
+                JSONObject userJson = new JSONObject(line);
+                if (userJson.getString("user_role").equals("admin")) {
+                    return; // Admin already exists
+                }
+            }
+
+            String userId = UserOperation.getInstance().generateUniqueUserId();
+            String encryptedPassword = UserOperation.getInstance().encryptPassword("admin123");
+            String registerTime = "01-01-2024_09:00:00";
+
+            Admin admin = new Admin(userId, "admin", encryptedPassword, registerTime, "admin");
+            Files.write(Paths.get(userFilePath), Collections.singletonList(admin.toString()), StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
