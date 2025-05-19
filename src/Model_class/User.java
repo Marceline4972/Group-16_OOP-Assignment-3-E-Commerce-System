@@ -1,11 +1,11 @@
 package Model_class;
 
 public abstract class User {
-    protected String userId; // format: u_xxxxxxxxxx
-    protected String userName;
-    protected String userPassword; // should be encrypted for storage
-    protected String userRegisterTime;
-    protected String userRole; // "admin" or "customer"
+    private String userId; // format: u_xxxxxxxxxx
+    private String userName;
+    private String userPassword; // should be encrypted for storage
+    private String userRegisterTime;
+    private String userRole; // "admin" or "customer"
 
     /**
     * Constructs a user object.
