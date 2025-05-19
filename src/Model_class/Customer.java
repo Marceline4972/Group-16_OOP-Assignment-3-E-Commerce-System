@@ -30,6 +30,13 @@ public class Customer extends User {
         this.userMobile = "0000000000";
     }
 
+    // Getters and setters
+    public String getUserEmail() { return userEmail; }
+    public void setUserEmail(String userEmail) { this.userEmail = userEmail; }
+
+    public String getUserMobile() { return userMobile; }
+    public void setUserMobile(String userMobile) { this.userMobile = userMobile; }
+
     /**
      * Returns the user Information as a formatted string.
      * @return String in JSON-like format
